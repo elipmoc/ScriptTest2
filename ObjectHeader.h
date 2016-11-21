@@ -1,4 +1,5 @@
 #pragma once
+#include "DefineTypes.h"
 #include "StackMemory.h"
 #include "Memory.h"
 #include "Object.h"

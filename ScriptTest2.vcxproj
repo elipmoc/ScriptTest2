@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="boostFomat.h" />
     <ClInclude Include="boostFunction.h" />
+    <ClInclude Include="DefineTypes.h" />
     <ClInclude Include="Echo.h" />
     <ClInclude Include="IfWhileFor.h" />
     <ClInclude Include="LexTest.h" />
