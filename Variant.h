@@ -1,9 +1,7 @@
 #pragma once
-class Variant:public Object{
+/*class Variant:public Object{
 public:
 	Variant(Memory* _m):Object(_m){}
-	virtual Variant& GetVariant() { return *this; }
-	virtual const Variant& GetVariant() const { return *this; }
 	//オブジェクトに自身の固有の値を返す
 	virtual void equal(Object*)const{ cout << "ObjectEqualErr" << endl; assert(0);exit(0); }
 	//Variantに任意の値を+するために使う
@@ -36,12 +34,13 @@ public:
 	virtual Variant& operator++(int){ cout << "Variant++Err" << endl; assert(0);exit(0); };
 	//キャスト
 	 virtual operator const bool()const { cout << "boolCastErr" << endl; assert(0); exit(0); }
-};
-
+};*/
+/*
 class BoolValue :public Variant {
 	bool value;
 public:
 	BoolValue(Memory* _m, const bool _value=true) :Variant(_m), value(_value) { };
+	virtual const Type GetType() { return Type::_bool; }
 	//オブジェクトに自身の固有の値を返す
 	virtual void equal(Object* o) const{ *o = value; }
 	//Variantに任意の値を=するために使う。結果を返す
@@ -53,13 +52,16 @@ public:
 	virtual const bool operator==(const bool i)const { return value == i; };
 	//キャスト
 	virtual operator const bool() const{ return value; }
-};
+};*/
 
-class IntValue :public Variant {
-	int value;
+class IntValue :public Object<int> {
 public:
-	IntValue(Memory* _m, const int _value=0) :Variant(_m), value(_value) { };
-	//オブジェクトに自身の固有の値を返す
+	IntValue(Memory* _m, const int value) :Object(_m){
+		pointer = m->sm.New<int>();
+		*static_cast<int*>(pointer) = value;
+	};
+
+	/*//オブジェクトに自身の固有の値を返す
 	virtual void equal(Object* o) const{ *o = value; }
 	//Variantに任意の値を+するために使う
 	virtual const Variant& plus(const Variant& v)const { return v + value;};
@@ -83,5 +85,5 @@ public:
 	virtual const bool operator==(const int i) const{ return value == i; };
 	virtual const bool operator==(const double i) const{ return value == i; };
 	//Variantの値を++するために使う。結果を返す
-	virtual Variant& operator++(int) { value++; return *this; };
+	virtual Variant& operator++(int) { value++; return *this; };*/
 };

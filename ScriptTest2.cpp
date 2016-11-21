@@ -8,18 +8,24 @@
 
 int main()
 {
-		string str = "25+45+10+5+5+5";
-		const Object* o = NULL;
-		if (ScriptParser::Compile(str.begin(), str.end(), o)) {
-			cout << "コンパイル成功" << endl;
-		}
-		else cout << "エラー" << endl;
-		Echo echo(&ScriptParser::m);
-		//	echo.objects.push_back(new Plus(&ScriptParser::m, new  const IntValue(&ScriptParser::m, 25), new const IntValue(&ScriptParser::m, 45)));
-		echo.objects.push_back(o);
-		echo.Run();
-
+	Memory m(1000, 100);
+	IntValue leftInt(&m, 10);
+	IntValue rightInt(&m, 5);
+	Plus<int, int, int> plus(&m, &leftInt, &rightInt);
+	plus.Run();
+	cout << *plus.GetPointer();
+	/*string str = "25+45+10+5+5+5";
+	const Object* o = NULL;
+	if (ScriptParser::Compile(str.begin(), str.end(), o)) {
+		cout << "コンパイル成功" << endl;
 	}
+	else cout << "エラー" << endl;
+	Echo echo(&ScriptParser::m);
+	//	echo.objects.push_back(new Plus(&ScriptParser::m, new  const IntValue(&ScriptParser::m, 25), new const IntValue(&ScriptParser::m, 45)));
+	echo.objects.push_back(o);
+	echo.Run();
+	*/
+
 	/*
 	Time t;
 	Memory m(1000, 100);

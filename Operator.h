@@ -1,15 +1,22 @@
 #pragma once
-//+
-class Plus:public Object{
-	const Object* right;
-	const Object* left;
+//+演算子 < 左辺オブジェクトの返り値の型,　""型　, このオブジェクトの返り値の型 >
+template<typename Left,typename Right,typename RESOULT>
+class Plus:public Object<RESOULT>{
+	Left* leftP;
+	Right* rightP;
+    Object* leftO;
+	Object* rightO;
 public:
-	Plus(Memory* _m, const Object* _left, const Object* _right) :Object(_m), left(_left), right(_right) {}
-	virtual const Variant& GetVariant()const{
-		return right->GetVariant().plus(left->GetVariant());
+	Plus(Memory* _m, Object* _leftO, Object* _rightO) :Object(_m), leftO(_leftO), rightO(_rightO){
+		leftP = leftO->GetPointer();
+		rightP = rightO->GetPointer();
+		pointer = m->sm.New<RESOULT>();
 	}
+	virtual void Run() { leftO->Run(); rightO->Run(); *static_cast<RESOULT*>(pointer)=*leftP + *rightP; }
 };
-//-
+
+
+/*//-
 class Minus :public Object {
 	const Object* right;
 	const Object* left;
@@ -85,4 +92,4 @@ public:
 		result = right->GetVariant().notequal(left->GetVariant());
 		return result;
 	}
-};
+};*/

@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <cmath>
 #include "stdafx.h"
 #include "ObjectHeader.h"
@@ -55,4 +55,4 @@ namespace ScriptParser {
 			return false;
 		return r;
 	}
-}
+}*/

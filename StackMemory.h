@@ -27,9 +27,9 @@ public:
 		currentNest--;}
 	//ƒƒ‚ƒŠŠm•Û
 	template<typename T>
-	void* New() {
+	T* New() {
 			assert(!(nextPointer + sizeof(T) > stackSize));
 		nextPointer += sizeof(T);
-		return &memoryPointer[nextPointer - sizeof(T)];
+		return (T*)&memoryPointer[nextPointer - sizeof(T)];
 	};
 };

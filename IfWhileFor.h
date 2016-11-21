@@ -1,5 +1,6 @@
 #pragma once
 //For•¶
+/*
 class For :public Object {
 	Object* define;//éŒ¾
 	Object* conditions;//ğŒ®
@@ -19,4 +20,4 @@ public:
 		}
 		m->sm.MinusNest();
 	};
-};
+};*/

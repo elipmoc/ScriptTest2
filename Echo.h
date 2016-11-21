@@ -1,4 +1,5 @@
 #pragma once
+/*
 class Echo :public Object {
 public:
 	vector<const Object*> objects;
@@ -12,4 +13,4 @@ public:
 			cout << endl;
 		}
 	}
-};
+};*/
