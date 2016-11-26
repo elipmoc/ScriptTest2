@@ -1,9 +1,11 @@
 #pragma once
-#include "DefineTypes.h"
+/*#include "DefineTypes.h"
 #include "StackMemory.h"
 #include "Memory.h"
 #include "Object.h"
+#include "Code.h"
 #include "Variant.h"
 #include "Operator.h"
+#include "Func.h"
 #include "IfWhileFor.h"
-#include "Echo.h"
+#include "Echo.h"*/

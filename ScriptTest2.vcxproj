@@ -147,17 +147,19 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="boostFomat.h" />
-    <ClInclude Include="boostFunction.h" />
+    <ClInclude Include="ByteCode.h" />
+    <ClInclude Include="Code.h" />
     <ClInclude Include="DefineTypes.h" />
     <ClInclude Include="Echo.h" />
+    <ClInclude Include="Func.h" />
     <ClInclude Include="IfWhileFor.h" />
-    <ClInclude Include="LexTest.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectHeader.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="ScriptParser.h" />
+    <ClInclude Include="Mnemonic.h" />
+    <ClInclude Include="StackMachine.h" />
     <ClInclude Include="StackMemory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

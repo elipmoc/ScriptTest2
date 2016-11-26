@@ -55,6 +55,27 @@ void,Int,Char,Double,Float,Bool,構造体名,
 ＋＋,－－,if,else,break,for,while,関数名,
 (,),[,],.,;,return,,,{,}
 
+バイトコード文法
+push<int> 値
+push<double> 値
+push<float> 値
+push<bool> 値
+push<char> 値
+moveStack 値
+jump 値
+return
+plus<int>
+plus<double>
+plus<float>
+minus<int>
+minus<double>
+minus<float>
+*<int>
+*<double>
+*<float>
+/<int>
+/<double>
+/<float>
 
 
 

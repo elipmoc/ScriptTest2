@@ -13,8 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ヘッダー ファイル\boostTest">
-      <UniqueIdentifier>{fbdc238e-bf67-4225-9e5e-fbe32fa5d7be}</UniqueIdentifier>
+    <Filter Include="ヘッダー ファイル\ByteCode">
+      <UniqueIdentifier>{8966312b-b0f3-4deb-a2bd-b97355273eb7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,9 +42,6 @@
     <ClInclude Include="Variant.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="StackMemory.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Memory.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -57,20 +54,29 @@
     <ClInclude Include="timeCheck.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="boostFomat.h">
-      <Filter>ヘッダー ファイル\boostTest</Filter>
-    </ClInclude>
-    <ClInclude Include="LexTest.h">
-      <Filter>ヘッダー ファイル\boostTest</Filter>
-    </ClInclude>
-    <ClInclude Include="boostFunction.h">
-      <Filter>ヘッダー ファイル\boostTest</Filter>
-    </ClInclude>
     <ClInclude Include="ScriptParser.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="DefineTypes.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Code.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Func.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="StackMemory.h">
+      <Filter>ヘッダー ファイル\ByteCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Mnemonic.h">
+      <Filter>ヘッダー ファイル\ByteCode</Filter>
+    </ClInclude>
+    <ClInclude Include="StackMachine.h">
+      <Filter>ヘッダー ファイル\ByteCode</Filter>
+    </ClInclude>
+    <ClInclude Include="ByteCode.h">
+      <Filter>ヘッダー ファイル\ByteCode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

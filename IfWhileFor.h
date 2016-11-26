@@ -1,23 +1,25 @@
-#pragma once
+/*#pragma once
 //For文
-/*
-class For :public Object {
-	Object* define;//宣言
-	Object* conditions;//条件式
-	Object* count;//カウント
+
+class For :public NonObject{
+	NonObject* define;//宣言
+	Object<bool>* conditions;//条件式
+	bool* conditionsP;//条件式の返り値
+	NonObject* count;//カウント
 public:
-	std::vector<Object*> objects;//繰り返し実行されるObject
-	For(Memory* _m, Object* _define, Object* _conditions, Object* _count)
-		:Object(_m), define(_define), conditions(_conditions), count(_count) {};
+	std::vector<NonObject*> objects;//繰り返し実行されるObject
+	For(Memory* _m, NonObject* _define, Object<bool>* _conditions, NonObject* _count)
+		:NonObject(_m), define(_define), conditions(_conditions), count(_count) {
+		conditionsP = conditions->GetPointer();
+	};
 	virtual void Run() {
 		auto size=objects.size();
-		m->sm.PlusNest();
 		unsigned int i;
-		for (define->Run(); conditions->GetVariant(); count->Run()) {
-			m->sm.PlusNest();
+		conditions->Run();
+		for (define->Run();*conditionsP;) {
 			for (i = 0; i < size; ++i)objects[i]->Run();
-			m->sm.MinusNest();
+			count->Run();
+			conditions->Run();
 		}
-		m->sm.MinusNest();
 	};
 };*/

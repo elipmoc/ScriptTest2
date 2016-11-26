@@ -2,19 +2,45 @@
 //
 
 #include "stdafx.h"
-#include "ScriptParser.h"
-#include "ObjectHeader.h"
+#include "ByteCode.h"
 #include "timeCheck.h"
 
 int main()
 {
-	Memory m(1000, 100);
-	IntValue leftInt(&m, 10);
-	IntValue rightInt(&m, 5);
-	Plus<int, int, int> plus(&m, &leftInt, &rightInt);
-	plus.Run();
-	cout << *plus.GetPointer();
-	/*string str = "25+45+10+5+5+5";
+/*	Memory m(1000, 100);
+	MakePlus<int,int>::o(&m, new Value<int>(&m), new Value<int>(&m));
+	//double a;
+	Value<double> a(&m);
+	//double total=0;
+	Value<double> total(&m, 0);
+	//for(a=0;a!=100;a=a+1)
+	For _for(&m,MakeEqual(&m, &a, new Value<double>(&m, 0)),
+		MakeNotEqual(&m, &a, new Value<double>(&m, 100000)),
+		MakeEqual(&m, &a, new Plus<double, double, double>(&m, &a, new Value < double > (&m, 1)))
+	);
+	//{ total=total+a;  }
+	_for.objects.push_back(new Equal<double,double>(&m,&total,new Plus<double,double,double>(&m,&total,&a)));
+	//cout<<a<<endl;
+	Echo<double> echo(&m, &total);
+	Code code(&m);
+	code.objects.push_back(&_for);
+	code.objects.push_back(&echo);
+	Time t;
+	t.Begin();
+	code.Run();
+	t.End();
+	cout << t.GetTime()<<endl;
+	/*
+	int count;
+	int _total = 0;
+	t.Begin();
+	for (count = 0; count != 10000000; count++) { _total += count; }
+	cout << _total << endl;
+	t.End();
+	cout << t.GetTime() << endl;*/
+	
+
+/*	string str = "25+45+10+5+5+5";
 	const Object* o = NULL;
 	if (ScriptParser::Compile(str.begin(), str.end(), o)) {
 		cout << "ƒRƒ“ƒpƒCƒ‹¬Œ÷" << endl;

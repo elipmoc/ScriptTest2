@@ -54,36 +54,12 @@ public:
 	virtual operator const bool() const{ return value; }
 };*/
 
-class IntValue :public Object<int> {
+/*
+template<typename T>
+class Value :public Object<T> {
 public:
-	IntValue(Memory* _m, const int value) :Object(_m){
-		pointer = m->sm.New<int>();
-		*static_cast<int*>(pointer) = value;
+	Value(Memory* _m, const T value) :Object(_m){
+		*pointer = value;
 	};
-
-	/*//オブジェクトに自身の固有の値を返す
-	virtual void equal(Object* o) const{ *o = value; }
-	//Variantに任意の値を+するために使う
-	virtual const Variant& plus(const Variant& v)const { return v + value;};
-	virtual const Variant& operator+(const int i)const { return *(new(m->sm.New<IntValue>()) const IntValue(m,value+i));};
-	virtual const Variant& operator+(const double) const{ cout << "+doubleErr" << endl; assert(0);exit(0);exit(0);};
-	//Variantに任意の値を-するために使う
-	virtual const Variant& minus(const Variant& v)const { return v - value; };
-	virtual const Variant& operator-(const int i)const { return *(new(m->sm.New<IntValue>()) const IntValue(m, value - i)); };
-	virtual const Variant& operator-(const double) const { cout << "+doubleErr" << endl; assert(0); exit(0); exit(0); };
-	//Variantに任意の値を=するために使う。結果を返す
-	virtual Variant& equal(Variant& o) const{ o = value; return o; };
-	virtual void operator=(const int i) { value = i; };
-	virtual void operator=(const double i) { value = i; };
-	//Variantに任意の値を+=するために使う。結果を返す
-	virtual Variant& plusequal(Variant& o) const { o += value; return o; };
-	virtual void operator+=(const int i) { value += i; };
-	virtual void operator+=(const double i) { value += i; };
-	//Variantに任意の値を==するために使う。結果を返す
-	virtual const bool equalequal(const Variant& o) const{ return o == value; };
-	virtual const bool notequal(const Variant& o) const{ return !( o == value); };
-	virtual const bool operator==(const int i) const{ return value == i; };
-	virtual const bool operator==(const double i) const{ return value == i; };
-	//Variantの値を++するために使う。結果を返す
-	virtual Variant& operator++(int) { value++; return *this; };*/
-};
+	Value(Memory* _m) :Object(_m) {};
+};*/

@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 enum class Type
 {
 	_char=0,
@@ -6,4 +6,4 @@ enum class Type
 	_double,
 	_void,
 	_bool
-};
+};*/
